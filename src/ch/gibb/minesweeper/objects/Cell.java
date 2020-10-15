@@ -4,15 +4,14 @@ import ch.gibb.minesweeper.objects.inheritances.BombCell;
 
 public abstract class Cell {
 
-    private int x;
-    private int y;
+    private Coordinate coordinate;
 
-    public int getX() {
-        return x;
+    public Coordinate getCoordinate() {
+        return coordinate;
     }
 
-    public int getY() {
-        return y;
+    public void setCoordinate(Coordinate coordinate) {
+        this.coordinate = coordinate;
     }
 
     public boolean isBomb() {

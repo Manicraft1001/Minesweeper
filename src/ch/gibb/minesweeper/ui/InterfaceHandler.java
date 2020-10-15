@@ -11,9 +11,31 @@ public class InterfaceHandler {
 
     public InterfaceHandler() {
         games = new ArrayList<>();
+        shuffleGame();
+        startLoop();
     }
 
-    private void startLoop() {
+    private boolean finished;
 
+    private void startLoop() {
+        while (!finished) {
+            final SweeperGame currentGame = getCurrentOrNewGame();
+            
+        }
+    }
+
+    private SweeperGame getCurrentOrNewGame() {
+        final SweeperGame currentGame = getCurrentGame();
+        if (currentGame.getGameResult().isFinished())
+            shuffleGame();
+        return getCurrentGame();
+    }
+
+    private SweeperGame getCurrentGame() {
+        return games.get(games.size() - 1);
+    }
+
+    private void shuffleGame() {
+        games.add(new SweeperGame());
     }
 }
