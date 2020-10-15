@@ -2,11 +2,11 @@ package ch.gibb.minesweeper.objects;
 
 public class SweeperGame {
 
-    private GameField gameField;
-    private GameResult gameResult;
+    private final GameField gameField;
+    private final GameResult gameResult;
 
     public SweeperGame() {
-        this.gameField = new GameField(12);
+        this.gameField = new GameField(12, 0.15D);
         this.gameResult = new GameResult();
     }
 
