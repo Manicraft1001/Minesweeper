@@ -19,10 +19,13 @@ public class InterfaceHandler {
         startLoop();
     }
 
-    private boolean finished;
-
+    /**
+     * Method to start the main
+     * game loop until the game has finished.
+     * Uses Ansi Colors to fill text: {@link AnsiColor}
+     */
     private void startLoop() {
-        while (!finished) {
+        while (true) {
             final SweeperGame currentGame = getCurrentOrNewGame();
 
             while (!currentGame.getGameResult().isFinished()) {
@@ -38,6 +41,12 @@ public class InterfaceHandler {
         }
     }
 
+    /**
+     * Get the current unfinished game or creates
+     * a new game if no game was found
+     * @return returns a instance of sweeper game with
+     * the state "unfinished"
+     */
     private SweeperGame getCurrentOrNewGame() {
         final SweeperGame currentGame = getCurrentGame();
         if (currentGame.getGameResult().isFinished())
@@ -45,10 +54,17 @@ public class InterfaceHandler {
         return getCurrentGame();
     }
 
+    /**
+     * Get the last game. See: {@link SweeperGame}
+     * @return returns an instance of
+     */
     private SweeperGame getCurrentGame() {
         return games.get(games.size() - 1);
     }
 
+    /**
+     * Creates a new instance and add it to game list
+     */
     private void shuffleGame() {
         games.add(new SweeperGame());
     }

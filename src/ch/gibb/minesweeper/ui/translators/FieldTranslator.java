@@ -3,10 +3,16 @@ package ch.gibb.minesweeper.ui.translators;
 import ch.gibb.minesweeper.objects.Cell;
 import ch.gibb.minesweeper.objects.GameField;
 
-import java.io.IOException;
-
+/***
+ * Class to translate variables into visual
+ * console output
+ */
 public class FieldTranslator {
 
+    /**
+     * Method to print the entire game field into system.out
+     * @param gameField the GameField to print
+     */
     public static void printField(GameField gameField) {
         final Cell[][] cells = gameField.getCells();
 

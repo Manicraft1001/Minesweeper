@@ -8,6 +8,11 @@ import java.io.InputStreamReader;
 
 public class ConsoleInterface {
 
+    /**
+     * Creates an instance of {@link Coordinate} from
+     * simple text input in console
+     * @return returns an instance of {@link Coordinate}
+     */
     public static Coordinate getCoordinateFromConsole() {
         Coordinate coordinate = null;
         final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
